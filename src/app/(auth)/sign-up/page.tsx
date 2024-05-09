@@ -28,7 +28,7 @@ import { signUpSchema } from "@/schemas/signUpSchema";
 import { ApiError } from "next/dist/server/api-utils";
 import { ApiResponse } from "@/types/ApiResponse";
 
-function page() {
+function SignUpPage() {
   const { toast } = useToast();
 
   const [username, setUsername] = useState("");
@@ -204,4 +204,4 @@ function page() {
   );
 }
 
-export default page;
+export default SignUpPage;
