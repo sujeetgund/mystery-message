@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# Mystery Message
+
+<p align="center">
+<img src="/public/logo.png" alt="logo" width="400" height="400" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License" />
+  <img src="https://img.shields.io/github/languages/top/sujeetgund/mystery-message" alt="Language" />
+</p>
+
+
+
+Mystery Message is the ultimate platform for sending anonymous messages to anyone. Share your thoughts, secrets, or compliments discreetly without revealing your identity. Start messaging anonymously today and explore a new way to connect with others.
+
+**[LIVE DEMO]:** [https://mystery-message-five.vercel.app](https://mystery-message-five.vercel.app)
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+```
+
+Copy environment variables from `.env.sample` file and paste into `.env` file:
+
+```bash
+MONGODB_URI=""
+RESEND_API_KEY=""
+NEXTAUTH_SECRET=""
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Tech Stack
+The website is built in NextJS and deployed on Vercel.
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js for building React Components.
+- TailwindCSS for styling.
+- MongoDB for database.
+- Vercel for deployments and CI/CD.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+- Login to your [Vercel](https://vercel.com) account.
+- Create a new project and select your GitHub repository.
+- Vercel will deploy your project to production.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Currently, I am not accepting contributions.
+
+
+## Context
+
+- [NextJS Docs](https://nextjs.org/docs)
+- [React Hook Form](https://react-hook-form.com/)
+- [Zod](https://zod.dev/)
+- [Shadcn UI](https://ui.shadcn.com/)
+
+## Support
+
+For support, email sujeetgund@gmail.com or DM on twitter [@Sujeet_Gund](https://twitter.com/Sujeet_Gund)
