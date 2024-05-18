@@ -1,11 +1,10 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { Loader2 } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -14,22 +13,22 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useToast } from "@/components/ui/use-toast";
 
 import axios, { AxiosError } from "axios";
 
 import { useDebounceCallback } from "usehooks-ts";
 
-import { useToast } from "@/components/ui/use-toast";
-
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { signUpSchema } from "@/schemas/signUpSchema";
-import { ApiError } from "next/dist/server/api-utils";
 import { ApiResponse } from "@/types/ApiResponse";
 
 function SignUpPage() {
   const { toast } = useToast();
+  const router = useRouter();
 
   const [username, setUsername] = useState("");
   const [usernameMessage, setUsernameMessage] = useState("");
@@ -38,9 +37,7 @@ function SignUpPage() {
 
   const debounced = useDebounceCallback(setUsername, 500);
 
-  const router = useRouter();
-
-  // Zod implementation
+  // Zod and React hook form implementation
   const form = useForm<z.infer<typeof signUpSchema>>({
     resolver: zodResolver(signUpSchema),
     defaultValues: {
@@ -63,7 +60,7 @@ function SignUpPage() {
 
           setUsernameMessage(response.data.message);
         } catch (error) {
-          const axiosError = error as AxiosError<ApiError>;
+          const axiosError = error as AxiosError<ApiResponse>;
           setUsernameMessage(
             axiosError.response?.data.message ??
               "Error checking unique username"
@@ -77,24 +74,26 @@ function SignUpPage() {
     checkUsernameUnique();
   }, [username]);
 
-  const onSubmit = async (data: z.infer<typeof signUpSchema>) => {
+  const onSubmit: SubmitHandler<z.infer<typeof signUpSchema>> = async (
+    data
+  ) => {
     setIsSubmitting(true);
     try {
       const response = await axios.post<ApiResponse>("/api/sign-up", data);
       toast({
-        title: response.data.success ? "Success" : "Error",
+        title: "Success",
         description: response.data.message,
       });
 
+      setIsSubmitting(false);
       if (response.data.success) {
         router.replace(`/verify/${username}`);
       }
-      setIsSubmitting(false);
     } catch (error) {
       console.log("user registration error", error);
-      const axiosError = error as AxiosError<ApiError>;
+      const axiosError = error as AxiosError<ApiResponse>;
       toast({
-        title: "SignUp Error",
+        title: "Error",
         description:
           axiosError.response?.data.message ?? "Error registering user",
         variant: "destructive",
