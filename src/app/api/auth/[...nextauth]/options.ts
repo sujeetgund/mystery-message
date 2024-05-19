@@ -17,7 +17,7 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials, req): Promise<any> {
         // Check if user is sending both identifier and password
-        if (!credentials?.identifier && !credentials?.password) {
+        if (!credentials?.identifier || !credentials?.password) {
           throw new Error("Provide identifier and password to login");
         }
 

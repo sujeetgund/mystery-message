@@ -25,6 +25,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { signUpSchema } from "@/schemas/signUpSchema";
 import { ApiResponse } from "@/types/ApiResponse";
+import Link from "next/link";
 
 function SignUpPage() {
   const { toast } = useToast();
@@ -197,6 +198,10 @@ function SignUpPage() {
               "Submit"
             )}
           </Button>
+
+          <p>
+            Already have an account? <Link href={"/sign-in"}>Sign In</Link>
+          </p>
         </form>
       </Form>
     </div>
