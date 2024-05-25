@@ -1,13 +1,13 @@
 
-# Mystery Message
+# Mystery Message - Send Anonymous Messages to Anyone
 
 <p align="center">
-<img src="/public/logo.png" alt="logo" width="400" height="400" />
+<img src="https://github.com/sujeetgund/mystery-message/assets/63530146/19f4ba73-2d87-49c3-99b4-848aea191d77" alt="logo" width="500" height="270" />
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License" />
-  <img src="https://img.shields.io/github/languages/top/sujeetgund/mystery-message" alt="Language" />
+  <img src="https://img.shields.io/badge/Built_With-Nextjs_14-black" alt="Built With Nextjs 14" />
 </p>
 
 
@@ -41,6 +41,23 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
+## Demo Screenshots
+
+### Home Page
+
+![image](https://github.com/sujeetgund/mystery-message/assets/63530146/924f9b33-8bcd-4828-8e87-3d18eabd863d)
+
+
+### Sign In Page
+
+![image](https://github.com/sujeetgund/mystery-message/assets/63530146/0f313276-e21b-4e2e-975a-f2c353f6780b)
+
+
+### Sign Up Page
+![image](https://github.com/sujeetgund/mystery-message/assets/63530146/b59060c3-f097-4694-be78-967a104ce43a)
+
+
+
 
 ## Tech Stack
 The website is built in NextJS and deployed on Vercel.
@@ -53,9 +70,10 @@ The website is built in NextJS and deployed on Vercel.
 
 ## Deployment
 
+- Fork this GitHub repository.
 - Login to your [Vercel](https://vercel.com) account.
-- Create a new project and select your GitHub repository.
-- Vercel will deploy your project to production.
+- Create a new project and select forked GitHub repository.
+- Vercel will deploy this project to production.
 
 ## Contributing
 
