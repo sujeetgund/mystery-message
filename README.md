@@ -1,4 +1,3 @@
-
 # Mystery Message - Send Anonymous Messages to Anyone
 
 <p align="center">
@@ -10,11 +9,9 @@
   <img src="https://img.shields.io/badge/Built_With-Nextjs_14-black" alt="Built With Nextjs 14" />
 </p>
 
-
-
 Mystery Message is the ultimate platform for sending anonymous messages to anyone. Share your thoughts, secrets, or compliments discreetly without revealing your identity. Start messaging anonymously today and explore a new way to connect with others.
 
-**[LIVE DEMO]:** [https://mystery-message-five.vercel.app](https://mystery-message-five.vercel.app)
+**[LIVE DEMO]** [https://mystery-message-five.vercel.app](https://mystery-message-five.vercel.app)
 
 ## Getting Started
 
@@ -30,6 +27,7 @@ Copy environment variables from `.env.sample` file and paste into `.env` file:
 MONGODB_URI=""
 RESEND_API_KEY=""
 NEXTAUTH_SECRET=""
+DOMAIN_NAME="http://localhost:3000"
 ```
 
 Run the development server:
@@ -40,10 +38,16 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+This project uses react-email for account verification purpose. If you want to preview email templates, run:
+
+```bash
+npm run email
+```
 
 ## Demo Screenshots
 
 ### Home Page
+
 
 ![image](https://github.com/sujeetgund/mystery-message/assets/63530146/924f9b33-8bcd-4828-8e87-3d18eabd863d)
 
@@ -54,19 +58,18 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 
 ### Sign Up Page
+
 ![image](https://github.com/sujeetgund/mystery-message/assets/63530146/b59060c3-f097-4694-be78-967a104ce43a)
 
 
-
-
 ## Tech Stack
+
 The website is built in NextJS and deployed on Vercel.
 
 - Next.js for building React Components.
 - TailwindCSS for styling.
 - MongoDB for database.
 - Vercel for deployments and CI/CD.
-
 
 ## Deployment
 
@@ -77,16 +80,16 @@ The website is built in NextJS and deployed on Vercel.
 
 ## Contributing
 
-Currently, I am not accepting contributions.
-
+Currently, I am not accepting contributions to this project.
 
 ## Context
 
-- [NextJS Docs](https://nextjs.org/docs)
+- [Next.js Docs](https://nextjs.org/docs)
 - [React Hook Form](https://react-hook-form.com/)
 - [Zod](https://zod.dev/)
 - [Shadcn UI](https://ui.shadcn.com/)
+- [React Email](https://react.email/docs/introduction)
 
 ## Support
 
-For support, email sujeetgund@gmail.com or DM on twitter [@Sujeet_Gund](https://twitter.com/Sujeet_Gund)
+For support, email sujeetgund@gmail.com or DM me on twitter [@Sujeet_Gund](https://twitter.com/Sujeet_Gund)
