@@ -75,7 +75,7 @@ const VerifyAccount = () => {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-6 w-full border p-12 shadow-xl"
+          className="space-y-6 w-full border p-12 shadow-xl bg-white rounded-2xl"
         >
           {/* Verification Code */}
           <FormField

@@ -113,7 +113,7 @@ function SignUpPage() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-6 w-full border p-12 shadow-xl"
+          className="space-y-6 w-full border p-12 shadow-xl bg-white rounded-2xl"
         >
           {/* Username */}
           <FormField
@@ -200,7 +200,7 @@ function SignUpPage() {
           </Button>
 
           <p>
-            Already have an account? <Link href={"/sign-in"}>Sign In</Link>
+            Already have an account? <Link href={"/sign-in"} className="text-blue-700">Sign In</Link>
           </p>
         </form>
       </Form>

@@ -20,6 +20,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
 import { signInSchema } from "@/schemas/signInSchema";
 import { signIn } from "next-auth/react";
+import Link from "next/link";
 
 const SignInPage = () => {
   const { toast } = useToast();
@@ -40,6 +41,7 @@ const SignInPage = () => {
   const onSubmit: SubmitHandler<z.infer<typeof signInSchema>> = async (
     data
   ) => {
+    setIsSubmitting(true);
     const result = await signIn("credentials", {
       identifier: data.identifier,
       password: data.password,
@@ -64,6 +66,7 @@ const SignInPage = () => {
 
       router.replace("/dashboard");
     }
+    setIsSubmitting(false);
 
     console.log(result);
   };
@@ -75,7 +78,7 @@ const SignInPage = () => {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-6 w-full border p-12 shadow-xl"
+          className="space-y-6 w-full border rounded-2xl p-12 shadow-xl bg-white"
         >
           {/* Identifier */}
           <FormField
@@ -122,6 +125,13 @@ const SignInPage = () => {
               "Submit"
             )}
           </Button>
+
+          <p>
+            New here?{" "}
+            <Link href="/sign-up" className="text-blue-700">
+              Create new account
+            </Link>
+          </p>
         </form>
       </Form>
     </div>
